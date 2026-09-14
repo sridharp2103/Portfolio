@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px theme('colors.primary.DEFAULT');
+  }
+  
+  .text-glow-sm {
+    text-shadow: 0 0 10px theme('colors.primary.glow');
+  }
+  
+  .bg-film-grain {
+    background-image: theme('backgroundImage.film-grain');
+    background-repeat: repeat;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  
+  .glass-card {
+    @apply bg-dark-lighter/60 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* Custom Scrollbar for Cinematic feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
