@@ -86,7 +86,7 @@ const ContactFooter = () => {
 
             {/* YouTube */}
             <motion.a 
-              href="https://www.youtube.com/@Meethithamilan"
+              href="https://www.youtube.com/@Meethitamilan"
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="youtube"
@@ -106,7 +106,7 @@ const ContactFooter = () => {
                 </svg>
               </div>
               <h3 className="text-gray-400 text-sm font-bold tracking-widest uppercase mb-2">YOUTUBE</h3>
-              <p className="text-white font-medium text-sm mb-4">Meethithamilan</p>
+              <p className="text-white font-medium text-sm mb-4">Meethitamilan</p>
               <span className="text-xs text-accent uppercase font-bold tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Watch on YouTube →</span>
             </motion.a>
 
@@ -174,7 +174,7 @@ const ContactFooter = () => {
             <div className="flex flex-wrap justify-center gap-6">
               <a href="https://www.instagram.com/cutsbycalm/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">Editing Instagram</a>
               <a href="https://www.instagram.com/sri_the_king.007?stkn=NDN4YnluaTl4b2Fp" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">Contact Instagram</a>
-              <a href="https://www.youtube.com/@Meethithamilan" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">YouTube</a>
+              <a href="https://www.youtube.com/@Meethitamilan" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">YouTube</a>
               <a href="mailto:sridharp2103@gmail.com" className="text-sm text-gray-400 hover:text-white transition-colors">Email</a>
               <a href="tel:8870719238" className="text-sm text-gray-400 hover:text-white transition-colors">Phone</a>
             </div>
