@@ -33,7 +33,7 @@ const WatchMyWork = () => {
             target="_blank"
             rel="noopener noreferrer"
             data-cursor="youtube"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white font-bold tracking-wider hover:bg-red-700 transition-colors uppercase rounded-sm"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold tracking-wider hover:bg-gray-200 transition-colors uppercase rounded-sm"
           >
             VISIT YOUTUBE CHANNEL <ExternalLink size={16} />
           </motion.a>

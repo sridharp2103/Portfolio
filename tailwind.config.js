@@ -7,11 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        dark: "#08070B",
-        darker: "#111019",
-        accent: "#8B5CF6", // Electric Violet
-        "accent-secondary": "#C084FC",
-        "accent-glow": "rgba(139, 92, 246, 0.5)",
+        dark: "#000000",
+        darker: "#0a0a0a",
+        accent: "#ffffff", // Pure White
+        "accent-secondary": "#e5e5e5",
+        "accent-glow": "rgba(255, 255, 255, 0.15)",
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
