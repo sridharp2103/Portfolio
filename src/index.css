@@ -53,12 +53,3 @@ html {
   letter-spacing: 0.05em;
 }
 
-/* Hide cursor on desktop where custom cursor is active */
-@media (hover: hover) and (pointer: fine) {
-  .custom-cursor-active {
-    cursor: none;
-  }
-  .custom-cursor-active * {
-    cursor: none !important;
-  }
-}

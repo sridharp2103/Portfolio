@@ -1,5 +1,3 @@
-import React from 'react';
-import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,7 +15,6 @@ function App() {
       {/* Global Film Grain Overlay */}
       <div className="fixed inset-0 z-50 bg-film-grain pointer-events-none"></div>
       
-      <CustomCursor />
       <Navbar />
       
       <main>
