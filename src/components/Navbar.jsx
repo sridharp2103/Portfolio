@@ -46,40 +46,17 @@ const Navbar = () => {
           <motion.a 
             href="#home" 
             onClick={(e) => handleNavClick(e, '#home')} 
-            className="text-xl font-display tracking-widest text-white relative group flex overflow-hidden cursor-pointer"
-            initial="initial"
-            whileHover="hover"
+            className="text-xl font-display tracking-widest text-white relative group overflow-hidden px-3 py-1.5 flex items-center"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <div className="flex">
-              {"SRIDHAR P".split("").map((char, i) => (
-                <motion.span
-                  key={i}
-                  variants={{
-                    initial: { y: 0, opacity: 1 },
-                    hover: { y: "-100%", opacity: 0 }
-                  }}
-                  transition={{ duration: 0.4, delay: i * 0.03, ease: [0.22, 1, 0.36, 1] }}
-                  className="inline-block"
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
-            </div>
-            <div className="absolute top-0 left-0 flex">
-              {"SRIDHAR P".split("").map((char, i) => (
-                <motion.span
-                  key={`hover-${i}`}
-                  variants={{
-                    initial: { y: "100%", opacity: 0 },
-                    hover: { y: 0, opacity: 1 }
-                  }}
-                  transition={{ duration: 0.4, delay: i * 0.03, ease: [0.22, 1, 0.36, 1] }}
-                  className="inline-block text-accent"
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
-            </div>
+            <span className="relative z-10 flex items-center">
+              SRIDHAR<span className="text-accent mx-0.5 animate-pulse">_</span>P
+            </span>
+            {/* Cinematic Slide-in Hover Effect */}
+            <span className="absolute inset-0 w-full h-full bg-white/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-0 -skew-x-12 origin-left"></span>
+            {/* Expanding Underline */}
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100"></span>
           </motion.a>
 
           {/* Desktop Nav */}
