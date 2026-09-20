@@ -1,40 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .text-glow {
-    text-shadow: 0 0 20px theme('colors.primary.DEFAULT');
-  }
-  
-  .text-glow-sm {
-    text-shadow: 0 0 10px theme('colors.primary.glow');
-  }
-  
-  .bg-film-grain {
-    background-image: theme('backgroundImage.film-grain');
-    background-repeat: repeat;
-    opacity: 0.04;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-  }
-  
-  .glass-card {
-    @apply bg-dark-lighter/60 backdrop-blur-md border border-white/10;
-  }
+:root {
+  --background: #08070B;
+  --foreground: #F5F5F5;
 }
 
-/* Custom Scrollbar for Cinematic feel */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #08070B;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #111019;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #3B82F6;
+  background: #8B5CF6; /* Electric Violet */
+}
+
+/* Film Grain Overlay Utility */
+.bg-film-grain {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png');
+  background-repeat: repeat;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.font-display {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Hide cursor on desktop where custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-active {
+    cursor: none;
+  }
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
 }

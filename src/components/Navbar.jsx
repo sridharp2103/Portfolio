@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Play } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -15,87 +15,99 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Work', href: '#work' },
-    { name: 'Credentials', href: '#credentials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'HOME', href: '#home' },
+    { name: 'ABOUT', href: '#about' },
+    { name: 'WORK', href: '#work' },
+    { name: 'SERVICES', href: '#services' },
+    { name: 'SKILLS', href: '#skills' },
+    { name: 'CONTACT', href: '#contact' },
   ];
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled ? 'py-4 bg-dark/80 backdrop-blur-md border-b border-white/5' : 'py-6 bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="relative flex items-center justify-center w-8 h-8 rounded bg-primary/20 text-primary border border-primary/30 group-hover:border-primary group-hover:bg-primary/30 transition-all">
-            <Play size={14} className="ml-1 fill-current" />
-            {/* REC indicator */}
-            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
-            </span>
-          </div>
-          <span className="font-display text-2xl tracking-wider text-white">SRIDHAR <span className="text-primary">P</span></span>
-        </a>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href}
-              className="text-sm font-medium text-gray-400 hover:text-white hover:text-glow-sm transition-all uppercase tracking-widest"
-            >
-              {link.name}
-            </a>
-          ))}
-          <a 
-            href="#contact"
-            className="px-5 py-2 rounded-full border border-primary/50 text-primary text-sm font-semibold hover:bg-primary hover:text-dark hover:border-transparent transition-all shadow-[0_0_15px_rgba(59,130,246,0.15)] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] uppercase tracking-wider"
-          >
-            Hire Me
+    <>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          scrolled ? 'py-4 bg-dark/80 backdrop-blur-md border-b border-white/5' : 'py-6 bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="text-xl font-display tracking-widest text-white relative group">
+            SRIDHAR P
+            <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
           </a>
-        </nav>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-gray-300 hover:text-white"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-
-      </div>
-
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-dark-lighter/95 backdrop-blur-lg border-b border-white/10 shadow-2xl p-6 md:hidden flex flex-col gap-6"
-          >
+          {/* Desktop Nav */}
+          <div className="hidden md:flex gap-8">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
-                className="text-lg font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-widest"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="text-sm text-gray-300 hover:text-white transition-colors relative group font-medium tracking-wider"
               >
                 {link.name}
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-1/2 opacity-0 group-hover:opacity-100"></span>
               </a>
             ))}
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden text-white"
+            onClick={() => setMobileMenuOpen(true)}
+            data-cursor="play"
+          >
+            <Menu size={28} />
+          </button>
+        </div>
+      </motion.nav>
+
+      {/* Mobile Nav Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-dark/95 backdrop-blur-xl flex flex-col justify-center items-center"
+          >
+            <button
+              className="absolute top-6 right-6 text-white"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <X size={32} />
+            </button>
+            <div className="flex flex-col gap-8 text-center">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: i * 0.1 }}
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="text-3xl font-display tracking-widest text-white hover:text-accent transition-colors"
+                >
+                  {link.name}
+                </motion.a>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-
-    </header>
+    </>
   );
 };
 

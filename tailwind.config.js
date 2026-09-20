@@ -7,23 +7,34 @@ export default {
   theme: {
     extend: {
       colors: {
-        dark: {
-          DEFAULT: '#0A0A0A',
-          lighter: '#121212',
-          card: '#171717',
-        },
-        primary: {
-          DEFAULT: '#3B82F6', // Electric Blue
-          glow: '#60A5FA',
-        },
+        dark: "#08070B",
+        darker: "#111019",
+        accent: "#8B5CF6", // Electric Violet
+        "accent-secondary": "#C084FC",
+        "accent-glow": "rgba(139, 92, 246, 0.5)",
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        display: ['Bebas Neue', 'sans-serif'],
+        display: ['Anton', 'sans-serif'],
       },
       backgroundImage: {
-        'film-grain': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')",
+        'film-grain': "url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png')",
+        'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
       },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { opacity: 0.8 },
+          '50%': { opacity: 0.4 },
+        }
+      }
     },
   },
   plugins: [],
