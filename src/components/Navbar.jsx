@@ -43,10 +43,44 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="text-xl font-display tracking-widest text-white relative group">
-            SRIDHAR P
-            <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full"></span>
-          </a>
+          <motion.a 
+            href="#home" 
+            onClick={(e) => handleNavClick(e, '#home')} 
+            className="text-xl font-display tracking-widest text-white relative group flex overflow-hidden cursor-pointer"
+            initial="initial"
+            whileHover="hover"
+          >
+            <div className="flex">
+              {"SRIDHAR P".split("").map((char, i) => (
+                <motion.span
+                  key={i}
+                  variants={{
+                    initial: { y: 0, opacity: 1 },
+                    hover: { y: "-100%", opacity: 0 }
+                  }}
+                  transition={{ duration: 0.4, delay: i * 0.03, ease: [0.22, 1, 0.36, 1] }}
+                  className="inline-block"
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </div>
+            <div className="absolute top-0 left-0 flex">
+              {"SRIDHAR P".split("").map((char, i) => (
+                <motion.span
+                  key={`hover-${i}`}
+                  variants={{
+                    initial: { y: "100%", opacity: 0 },
+                    hover: { y: 0, opacity: 1 }
+                  }}
+                  transition={{ duration: 0.4, delay: i * 0.03, ease: [0.22, 1, 0.36, 1] }}
+                  className="inline-block text-accent"
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </div>
+          </motion.a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex gap-8">
