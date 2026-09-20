@@ -40,21 +40,24 @@ export const reels = [
     title: "Travel Cinematic",
     category: "Instagram Reel",
     thumbnail: "https://images.unsplash.com/photo-1516939884455-1445c8652f83?q=80&w=1920&auto=format&fit=crop",
-    videoUrl: "https://www.instagram.com/cutsbycalm/"
+    videoUrl: "https://www.instagram.com/cutsbycalm/",
+    driveFileId: "1SW55CrRau3CnaBLC0ZhVT5PbNPkYL_71"
   },
   {
     id: "reel-2",
     title: "Gym Promo",
     category: "Fitness Edit",
     thumbnail: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop",
-    videoUrl: "https://www.instagram.com/cutsbycalm/"
+    videoUrl: "https://www.instagram.com/cutsbycalm/",
+    driveFileId: "1lGej7GpeAynP2vAX0L0hoVJ7u6LlfUPA"
   },
   {
     id: "reel-3",
     title: "Product Teaser",
     category: "Commercial Reel",
     thumbnail: "https://images.unsplash.com/photo-1576086280544-a03be18972ec?q=80&w=1920&auto=format&fit=crop",
-    videoUrl: "https://www.instagram.com/cutsbycalm/"
+    videoUrl: "https://www.instagram.com/cutsbycalm/",
+    driveFileId: "1xkDSilCpGGuviz4IQE8tnu3vRA2JIrkg"
   }
 ];
 

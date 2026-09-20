@@ -122,13 +122,11 @@ const WorkPortfolio = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {reels.map((reel, idx) => (
-                <motion.a
+                <motion.div
                   key={reel.id}
-                  href={reel.videoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={() => setSelectedProject(reel)}
                   data-cursor="reels"
-                  className="group block relative overflow-hidden rounded-sm bg-gray-900 aspect-[9/16]"
+                  className="group block relative overflow-hidden rounded-sm bg-gray-900 aspect-[9/16] cursor-pointer"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -153,7 +151,7 @@ const WorkPortfolio = () => {
                      <h4 className="text-white text-sm font-bold truncate">{reel.title}</h4>
                      <span className="text-accent text-[10px] uppercase tracking-wider block">{reel.category}</span>
                   </div>
-                </motion.a>
+                </motion.div>
               ))}
             </div>
           </motion.div>
