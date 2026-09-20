@@ -7,7 +7,7 @@ export const projects = [
     thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop",
     driveUrl: "https://drive.google.com/drive/folders/1Ji3-Am55Xjxncq2XEjguPt9HUsyhagM3",
     videoUrl: "https://www.youtube.com/@Meethitamilan",
-    driveFileId: "dummy_id_1",
+    driveFileId: "1SW55CrRau3CnaBLC0ZhVT5PbNPkYL_71",
     size: "large"
   },
   {
@@ -18,7 +18,7 @@ export const projects = [
     thumbnail: "https://images.unsplash.com/photo-1516280440502-859eb5e57140?q=80&w=2070&auto=format&fit=crop",
     driveUrl: "https://drive.google.com/drive/folders/1Ji3-Am55Xjxncq2XEjguPt9HUsyhagM3",
     videoUrl: "https://www.youtube.com/@Meethitamilan",
-    driveFileId: "dummy_id_2",
+    driveFileId: "1lGej7GpeAynP2vAX0L0hoVJ7u6LlfUPA",
     size: "medium"
   },
   {
@@ -29,7 +29,7 @@ export const projects = [
     thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2070&auto=format&fit=crop",
     driveUrl: "https://drive.google.com/drive/folders/1Ji3-Am55Xjxncq2XEjguPt9HUsyhagM3",
     videoUrl: "https://www.youtube.com/@Meethitamilan",
-    driveFileId: "dummy_id_3",
+    driveFileId: "1xkDSilCpGGuviz4IQE8tnu3vRA2JIrkg",
     size: "medium"
   }
 ];
