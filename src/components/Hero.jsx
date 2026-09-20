@@ -63,12 +63,41 @@ const Hero = () => {
         </motion.div>
 
         <motion.h1 
-          className="text-7xl md:text-[9rem] lg:text-[11rem] leading-none font-display text-white mb-2 tracking-tighter"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="text-7xl md:text-[9rem] lg:text-[11rem] leading-none font-display text-white mb-2 tracking-tighter flex justify-center"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+            }
+          }}
         >
-          SRIDHAR<span className="text-accent">.</span>P
+          {"SRIDHAR".split("").map((letter, index) => (
+            <motion.span
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
+              }}
+            >
+              {letter}
+            </motion.span>
+          ))}
+          <motion.span 
+            className="text-accent"
+            variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
+            }}
+          >.</motion.span>
+          <motion.span
+            variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
+            }}
+          >P</motion.span>
         </motion.h1>
 
         <motion.h2 

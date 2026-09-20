@@ -112,53 +112,77 @@ const ContactFooter = () => {
 
           </div>
 
-          {/* Large CTA */}
-          <motion.div 
-            className="bg-accent text-dark p-12 md:p-16 rounded-sm text-center relative overflow-hidden"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            {/* CTA Background Pattern */}
-            <div className="absolute inset-0 opacity-10" 
-                 style={{ backgroundImage: 'radial-gradient(circle at center, #000 2px, transparent 2px)', backgroundSize: '24px 24px' }}></div>
-            
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-5xl font-display tracking-wide mb-4">
+          {/* Enquiry Form Section */}
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-24 mb-24 items-center">
+            {/* Form Side */}
+            <motion.div
+              className="bg-darker p-8 md:p-12 border border-white/10 rounded-sm"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-2xl font-display text-white mb-6 tracking-wide">SEND AN ENQUIRY</h3>
+              <form action="https://formsubmit.co/sridharp2103@gmail.com" method="POST" className="flex flex-col gap-6">
+                {/* Disable Captcha for smoother UX (FormSubmit feature) */}
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_subject" value="New Enquiry from Portfolio Website!" />
+                <input type="hidden" name="_next" value={window.location.href} />
+
+                <div>
+                  <label htmlFor="name" className="block text-xs font-bold text-gray-400 tracking-widest uppercase mb-2">Your Name</label>
+                  <input type="text" id="name" name="name" required className="w-full bg-dark border border-white/10 focus:border-white focus:outline-none text-white px-4 py-3 rounded-sm transition-colors" placeholder="John Doe" />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-xs font-bold text-gray-400 tracking-widest uppercase mb-2">Your Email</label>
+                  <input type="email" id="email" name="email" required className="w-full bg-dark border border-white/10 focus:border-white focus:outline-none text-white px-4 py-3 rounded-sm transition-colors" placeholder="john@example.com" />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-xs font-bold text-gray-400 tracking-widest uppercase mb-2">Project Details</label>
+                  <textarea id="message" name="message" rows="4" required className="w-full bg-dark border border-white/10 focus:border-white focus:outline-none text-white px-4 py-3 rounded-sm transition-colors resize-none" placeholder="Tell me about your video editing needs..."></textarea>
+                </div>
+
+                <button type="submit" className="w-full bg-white text-black font-bold tracking-widest uppercase py-4 mt-2 hover:bg-gray-200 transition-colors rounded-sm">
+                  SEND ENQUIRY →
+                </button>
+              </form>
+            </motion.div>
+
+            {/* CTA Side */}
+            <motion.div 
+              className="text-left"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-5xl font-display tracking-wide text-white mb-6">
                 READY TO TURN RAW FOOTAGE INTO SOMETHING GREAT?
               </h2>
-              <p className="text-xl font-medium mb-2">
-                Available for freelance & project-based editing work.
-              </p>
-              <p className="text-sm font-bold tracking-widest uppercase opacity-70 mb-10">
-                Remote • Quick Turnaround • Open to New Projects
+              <p className="text-xl font-medium text-gray-400 mb-6">
+                Available for freelance & project-based editing work. Remote • Quick Turnaround • Open to New Projects.
               </p>
               
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col gap-4">
                 <a 
                   href="https://www.instagram.com/sri_the_king.007?stkn=NDN4YnluaTl4b2Fp"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-8 py-4 bg-dark text-white font-bold tracking-wider hover:bg-darker transition-colors rounded-sm uppercase text-sm"
+                  className="w-fit px-8 py-4 bg-white/5 border border-white/10 text-white font-bold tracking-wider hover:bg-white hover:text-black transition-colors rounded-sm uppercase text-sm"
                 >
-                  INSTAGRAM →
+                  MESSAGE ON INSTAGRAM →
                 </a>
                 <a 
                   href="mailto:sridharp2103@gmail.com"
-                  className="w-full sm:w-auto px-8 py-4 bg-white/20 backdrop-blur-sm border border-dark/20 text-dark font-bold tracking-wider hover:bg-white/30 transition-colors rounded-sm uppercase text-sm"
+                  className="w-fit px-8 py-4 bg-transparent border border-white/10 text-white font-bold tracking-wider hover:border-white hover:text-white transition-colors rounded-sm uppercase text-sm"
                 >
-                  EMAIL ME →
-                </a>
-                <a 
-                  href="#work"
-                  className="w-full sm:w-auto px-8 py-4 bg-transparent text-dark border border-dark font-bold tracking-wider hover:bg-dark/5 transition-colors rounded-sm uppercase text-sm"
-                >
-                  VIEW MY WORK →
+                  EMAIL ME DIRECTLY →
                 </a>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
