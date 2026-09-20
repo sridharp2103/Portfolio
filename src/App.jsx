@@ -3,7 +3,6 @@ import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import FeaturedProject from './components/FeaturedProject';
 import WorkPortfolio from './components/WorkPortfolio';
 import WatchMyWork from './components/WatchMyWork';
 import Services from './components/Services';
@@ -24,7 +23,6 @@ function App() {
       <main>
         <Hero />
         <About />
-        <FeaturedProject />
         <WorkPortfolio />
         <WatchMyWork />
         <Services />

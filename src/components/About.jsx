@@ -8,11 +8,6 @@ const timelineEvents = [
     desc: "Discovered the passion for crafting visuals."
   },
   {
-    year: "30 VIDEOS / 30 DAYS",
-    title: "The Challenge",
-    desc: "Built speed, consistency and creativity through daily uploads."
-  },
-  {
     year: "FREELANCE",
     title: "Professional Path",
     desc: "Started working on editing projects for clients."
